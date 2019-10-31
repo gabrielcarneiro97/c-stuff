@@ -2,10 +2,10 @@
 #include <stdlib.h>
 
 int **mtx_allocate(int size) {
-    int** mtx = (int **) malloc(sizeof(int *) * size);
+    int** mtx = (int **) calloc(size, sizeof(int *));
 
     for (int i = 0; i < size; i += 1) {
-        mtx[i] = (int *) malloc(sizeof(int) * size);
+        mtx[i] = (int *) calloc(size, sizeof(int));
     }
 
     return mtx;
